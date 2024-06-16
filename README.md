@@ -1,2 +1,3 @@
 # solarxplain-app
-Web app of SolarXplain
+
+Web app of solarXplain
