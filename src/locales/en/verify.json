@@ -1,0 +1,8 @@
+{
+  "title": "Verify your email address",
+  "desc": "Check your email for a verification code we've just sent.",
+  "form": {
+    "resend": "Resend Code",
+    "verifyEmail": "Verify Email"
+  }
+}

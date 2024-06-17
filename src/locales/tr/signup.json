@@ -1,0 +1,19 @@
+{
+  "title": "Hesap oluştur",
+  "desc": "Hesabınızı oluşturmak için bilgilerinizi girin",
+  "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
+  "signIn": "Oturum aç",
+  "form": {
+    "companyName": {
+      "label": "Şirket Adı",
+      "placeholder": "Acme Corporation",
+      "error": "Lütfen şirketinizin adını girin"
+    },
+    "companyWebsite": {
+      "label": "Şirket Web Sitesi",
+      "placeholder": "acmecorp.com",
+      "error": "Lütfen şirketinizin web adresini girin"
+    },
+    "signup": "Kayıt ol"
+  }
+}

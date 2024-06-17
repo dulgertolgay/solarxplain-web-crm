@@ -1,0 +1,19 @@
+{
+  "title": "Create an account",
+  "desc": "Enter your information to create your account",
+  "alreadyHaveAccount": "Already have an account?",
+  "signIn": "Sign in",
+  "form": {
+    "companyName": {
+      "label": "Company Name",
+      "placeholder": "Acme Corporation",
+      "error": "Please enter your company name"
+    },
+    "companyWebsite": {
+      "label": "Company Website",
+      "placeholder": "acmecorp.com",
+      "error": "Please enter your company website"
+    },
+    "signup": "Sign up"
+  }
+}

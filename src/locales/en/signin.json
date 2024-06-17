@@ -1,0 +1,10 @@
+{
+  "title": "Welcome Back to solarXplain",
+  "desc": "Enter your credentials below to login to your account",
+  "dontHaveAccount": "Don't have an account?",
+  "signup": "Sign Up",
+  "form": {
+    "forgotPassword": "Forgot your password?",
+    "signIn": "Sign In"
+  }
+}

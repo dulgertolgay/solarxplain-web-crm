@@ -1,0 +1,10 @@
+{
+  "title": "solarXplain'e Hoş Geldiniz",
+  "desc": "Hesabınıza giriş yapmak için hesap bilgilerinizi girin",
+  "dontHaveAccount": "Hesabınız yok mu?",
+  "signup": "Kayıt Ol",
+  "form": {
+    "forgotPassword": "Şifrenizi mi unuttunuz?",
+    "signIn": "Oturum Aç"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "E-posta adresinizi doğrulayın",
+  "desc": "Az önce gönderdiğimiz doğrulama kodu için e-postanızı kontrol edin.",
+  "form": {
+    "resend": "Kodu Yeniden Gönder",
+    "verifyEmail": "E-postayı Doğrula"
+  }
+}
