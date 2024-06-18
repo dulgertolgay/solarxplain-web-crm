@@ -56,7 +56,7 @@ const VerifyForm = ({ className, ...props }: VerifyFormProps) => {
           </InputOTP>
           <div className="grid grid-cols-2 gap-4">
             <Button variant="secondary" asChild>
-              <Link href="/auth/resend-otp">{t("form.resend")}</Link>
+              <Link href="/resend-otp">{t("form.resend")}</Link>
             </Button>
             <Button type="submit" disabled={isLoading}>
               {isLoading && (

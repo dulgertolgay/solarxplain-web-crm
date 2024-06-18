@@ -30,7 +30,7 @@ const ResendOTP = async ({
         <ResendOtpForm />
         <div className="mt-4 text-center text-sm text-muted-foreground">
           <Link
-            href="/auth/verify"
+            href="/verify"
             className="underline underline-offset-4 hover:text-primary"
           >
             {t("backToVerify")}

@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -11,19 +9,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { LoaderCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-interface UserSignInFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserSignUpFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 interface FormData {
+  name: string;
   email: string;
+  company: string;
+  companyWebsite: string;
   password: string;
 }
 
-const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
+const UserSignUpForm = ({ className, ...props }: UserSignUpFormProps) => {
   const { t } = useTranslation();
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [formData, setFormData] = React.useState<FormData>({
+    name: "",
     email: "",
+    company: "",
+    companyWebsite: "",
     password: "",
   });
 
@@ -42,7 +47,7 @@ const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
 
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/home/dashboard");
+      router.push("/verify");
     }, 3000);
   };
 
@@ -50,6 +55,18 @@ const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
     <div className={cn("grid gap-6", className)} {...props}>
       <form onSubmit={onSubmit}>
         <div className="grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="name">{t("auth:form.name.label")}*</Label>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              placeholder={t("auth:form.name.placeholder")}
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">{t("auth:form.email.label")}*</Label>
             <Input
@@ -63,19 +80,38 @@ const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
             />
           </div>
           <div className="grid gap-2">
-            <div className="flex items-center">
-              <Label htmlFor="password">{t("auth:form.password.label")}*</Label>
-              <Link
-                href="/auth/forgot-password"
-                className="ml-auto inline-block text-sm underline"
-              >
-                {t("form.forgotPassword")}
-              </Link>
-            </div>
+            <Label htmlFor="company">{t("form.companyName.label")}*</Label>
+            <Input
+              id="company"
+              name="company"
+              type="text"
+              placeholder={t("form.companyName.placeholder")}
+              required
+              value={formData.company}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="companyWebsite">
+              {t("form.companyWebsite.label")}*
+            </Label>
+            <Input
+              id="companyWebsite"
+              name="companyWebsite"
+              type="text"
+              placeholder={t("form.companyWebsite.placeholder")}
+              required
+              value={formData.companyWebsite}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="password">{t("auth:form.password.label")}*</Label>
             <Input
               id="password"
-              type="password"
               name="password"
+              type="password"
+              placeholder={t("auth:form.password.placeholder")}
               required
               value={formData.password}
               onChange={handleChange}
@@ -85,7 +121,7 @@ const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
             {isLoading && (
               <LoaderCircle className="animate-spin h-5 w-5 mr-2" />
             )}
-            {t("form.signin")}
+            {t("form.signup")}
           </Button>
         </div>
       </form>
@@ -93,4 +129,4 @@ const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
   );
 };
 
-export default UserSignInForm;
+export default UserSignUpForm;

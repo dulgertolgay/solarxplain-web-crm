@@ -27,7 +27,7 @@ const ResendOtpForm = ({ className, ...props }: ResendOtpFormProps) => {
 
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/auth/verify");
+      router.push("/verify");
     }, 3000);
   };
 

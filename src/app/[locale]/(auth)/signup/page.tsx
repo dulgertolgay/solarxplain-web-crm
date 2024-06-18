@@ -50,7 +50,7 @@ const SignUp = async ({
         <div className="mt-4 text-center text-sm text-muted-foreground">
           {t("alreadyHaveAccount")}{" "}
           <Link
-            href="/auth/signin"
+            href="/signin"
             className="underline underline-offset-4 hover:text-primary"
           >
             {t("signIn")}

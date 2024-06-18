@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -9,23 +11,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { LoaderCircle } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
-interface ForgotPasswordFormProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserSignInFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 interface FormData {
   email: string;
+  password: string;
 }
 
-const ForgotPasswordForm = ({
-  className,
-  ...props
-}: ForgotPasswordFormProps) => {
+const UserSignInForm = ({ className, ...props }: UserSignInFormProps) => {
   const { t } = useTranslation();
   const router = useRouter();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [formData, setFormData] = React.useState<FormData>({
     email: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,7 +42,7 @@ const ForgotPasswordForm = ({
 
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/auth/signin");
+      router.push("/home/dashboard");
     }, 3000);
   };
 
@@ -63,11 +62,30 @@ const ForgotPasswordForm = ({
               onChange={handleChange}
             />
           </div>
+          <div className="grid gap-2">
+            <div className="flex items-center">
+              <Label htmlFor="password">{t("auth:form.password.label")}*</Label>
+              <Link
+                href="/forgot-password"
+                className="ml-auto inline-block text-sm underline"
+              >
+                {t("form.forgotPassword")}
+              </Link>
+            </div>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              required
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </div>
           <Button type="submit" disabled={isLoading}>
             {isLoading && (
               <LoaderCircle className="animate-spin h-5 w-5 mr-2" />
             )}
-            {t("resetPassword")}
+            {t("form.signIn")}
           </Button>
         </div>
       </form>
@@ -75,4 +93,4 @@ const ForgotPasswordForm = ({
   );
 };
 
-export default ForgotPasswordForm;
+export default UserSignInForm;

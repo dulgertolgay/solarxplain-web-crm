@@ -20,7 +20,7 @@ const Header = () => {
 
   const handleLogout = () => {
     // TODO: Implement logout
-    router.push("/auth/signin");
+    router.push("/signin");
   };
 
   return (

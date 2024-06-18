@@ -1,20 +1,19 @@
 import Link from "next/link";
-import { Trans } from "react-i18next";
 import initTranslations from "@/app/i18n";
 
 import TranslationsProvider from "@/components/translation-provider";
-import UserSignInForm from "./components/user-sign-in-form";
+import ForgotPasswordForm from "./components/forgot-password-form";
 
-const i18nNamespaces = ["signin", "auth"];
+const i18nNamespaces = ["forgot-password", "auth"];
 
-const SignIn = async ({
+const ForgotPassword = async ({
   params: { locale },
 }: Readonly<{
   params: {
     locale: string;
   };
 }>) => {
-  const { t, resources, i18n } = await initTranslations(locale, i18nNamespaces);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
@@ -28,30 +27,18 @@ const SignIn = async ({
           </h1>
           <p className="text-sm text-muted-foreground">{t("desc")}</p>
         </div>
-        <UserSignInForm />
+        <ForgotPasswordForm />
         <div className="mt-4 text-center text-sm text-muted-foreground">
-          {t("dontHaveAccount")}{" "}
           <Link
-            href="/auth/signup"
+            href="/signin"
             className="underline underline-offset-4 hover:text-primary"
           >
-            {t("signup")}
+            {t("backToSignIn")}
           </Link>
         </div>
-        <p className="px-8 text-center text-sm text-muted-foreground">
-          {/* TODO: fix interpolation <Trans
-            i18nKey="auth:terms"
-            t={t}
-            i18n={i18n}
-            components={{
-              termsLink: <LinkText href="/terms" />,
-              privacyLink: <LinkText href="/privacy-policy" />,
-            }}
-          /> */}
-        </p>
       </div>
     </TranslationsProvider>
   );
 };
 
-export default SignIn;
+export default ForgotPassword;

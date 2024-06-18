@@ -1,24 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import acceptLanguage from "accept-language";
 import i18nConfig from "./i18n.config";
 
-// Middleware function to handle 404 errors
-export function handle404(req: any) {
-  const url = req.nextUrl.clone();
-  // Check if the requested path matches any existing page or API route
-  if (url.pathname === "/_error") {
-    url.pathname = "/dashboard";
-    return NextResponse.redirect(url);
-  }
-
-  return NextResponse.next();
-}
-
 // Middleware function to handle i18n redirection
-export function i18nRedirect(req: any) {
+export function i18nRedirect(req: NextRequest) {
   let lng;
-  if (req.cookies.has(i18nConfig.cookieName))
-    lng = acceptLanguage.get(req.cookies.get(i18nConfig.cookieName).value);
   if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
   if (!lng) lng = i18nConfig.defaultLocale;
   // Redirect if lng in path is not supported
@@ -32,44 +18,25 @@ export function i18nRedirect(req: any) {
       new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
     );
   }
-
-  if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer"));
-    const lngInReferer = i18nConfig.locales.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`)
-    );
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(i18nConfig.cookieName, lngInReferer);
-    return response;
-  }
-
-  return NextResponse.next();
 }
 
 // Middleware function for authentication
-function checkAuth(req: any) {
+function checkAuth(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  if (pathname.startsWith("/home")) {
-    // TODO: Add your authentication logic here
-    const isAuthenticated = true; // TODO: Replace with actual auth check
-    if (!isAuthenticated) {
-      return NextResponse.redirect("/login");
-    }
+  const lng = pathname.split("/")[1];
+  // TODO: Add your authentication logic here
+  const isAuthenticated = true; // TODO: Replace with actual auth check
+  if (!isAuthenticated && pathname.includes("/home/")) {
+    return NextResponse.redirect(new URL(`/${lng}/signin`, req.url));
   }
-
-  return NextResponse.next();
 }
 
 // Main middleware function to orchestrate the execution
-export function middleware(req: any) {
+export function middleware(req: NextRequest) {
   let response: any = null;
 
   // Execute i18n redirection middleware next
   response = i18nRedirect(req);
-  if (response) return response;
-
-  // Execute 404 handling middleware last
-  response = handle404(req);
   if (response) return response;
 
   // Execute authentication middleware next
