@@ -12,6 +12,7 @@ import {
   Settings,
   CirclePercent,
   Calculator,
+  Users2,
   LucideIcon,
   ArrowLeftToLine,
   ArrowRightToLine,
@@ -37,6 +38,11 @@ const Links: {
     title: "Dashboard",
     href: "/home/dashboard",
     icon: Home,
+  },
+  {
+    title: "Customers",
+    href: "/home/customers",
+    icon: Users2,
   },
   {
     title: "Projects",

@@ -9,9 +9,9 @@ const HomeLayout = ({
   return (
     <div className="flex flex-row h-screen w-screen">
       <SideNav />
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col grow overflow-x-hidden">
         <Header />
-        <div className="overflow-auto h-full space-y-4 p-8 bg-[var(--secondary-bg)]">
+        <div className="overflow-y-scroll w-full h-full space-y-4 p-8 bg-[var(--secondary-bg)]">
           {children}
         </div>
       </div>
