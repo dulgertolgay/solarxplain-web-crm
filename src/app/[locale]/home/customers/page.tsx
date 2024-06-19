@@ -3,8 +3,7 @@ import { z } from "zod";
 import { customerSchema } from "./constants/types";
 
 import TranslationsProvider from "@/components/translation-provider";
-import { columns } from "./components/data-table/columns";
-import { DataTable } from "@/components/data-table/data-table";
+import CustomersDataTable from "./components/data-table/data-table";
 
 const i18nNamespaces = ["customers", "translations"];
 
@@ -45,13 +44,11 @@ const Customers = async ({
       <div className="hidden h-full flex-1 flex-col space-y-4 md:flex">
         <div className="flex items-center justify-between space-y-2">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">Customers</h2>
-            <p className="text-muted-foreground">
-              Here&apos;s a list of your customers!
-            </p>
+            <h2 className="text-2xl font-bold tracking-tight">{t("title")}</h2>
+            <p className="text-muted-foreground">{t("desc")}</p>
           </div>
         </div>
-        <DataTable data={customers} columns={columns} />
+        <CustomersDataTable customers={customers} />
       </div>
     </TranslationsProvider>
   );

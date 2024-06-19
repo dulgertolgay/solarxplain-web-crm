@@ -1,3 +1,10 @@
 {
-  "mobileError": "Please use a bigger screen."
+  "mobileError": "Please use a bigger screen.",
+  "table": {
+    "toolbar": {
+      "view": "View",
+      "reset": "Reset",
+      "toggleColumns": "Toggle columns"
+    }
+  }
 }

@@ -21,16 +21,23 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { PlusCircle } from "lucide-react";
-import { customerTypes } from "../constants/types";
+import { Customer, customerTypes } from "../constants/types";
+import { useTranslation } from "react-i18next";
 
-const CustomerDialog = () => {
+export interface CustomerDialogProps {
+  customer?: Customer;
+}
+
+const CustomerDialog = ({ customer }: CustomerDialogProps) => {
+  const { t } = useTranslation();
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button size="sm" className="h-8 gap-1">
           <PlusCircle className="h-3.5 w-3.5" />
           <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-            Add Customer
+            {t("customerDialog.add")}
           </span>
         </Button>
       </DialogTrigger>
@@ -45,25 +52,37 @@ const CustomerDialog = () => {
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-[3fr_2fr] gap-2">
             <div className="grid items-center gap-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">
+                {t("customerDialog.form.name.label")}
+              </Label>
               <Input
                 id="name"
                 value=""
-                placeholder="John Doe"
+                placeholder={t("customerDialog.form.name.label")}
                 className="col-span-3"
               />
             </div>
             <div className="grid items-center gap-2">
-              <Label htmlFor="name">Customer Type</Label>
+              <Label htmlFor="name">
+                {t("customerDialog.form.customerType.label")}
+              </Label>
               <Select>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a customer type" />
+                  <SelectValue
+                    placeholder={t(
+                      "customerDialog.form.customerType.placeholder"
+                    )}
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Customer Types</SelectLabel>
+                    <SelectLabel>
+                      {t("table.toolbar.customerTypes.label")}
+                    </SelectLabel>
                     {customerTypes.map((type) => (
-                      <SelectItem value={type.value}>{type.label}</SelectItem>
+                      <SelectItem key={type.value} value={type.value}>
+                        {t(`table.toolbar.customerTypes.options.${type.value}`)}
+                      </SelectItem>
                     ))}
                   </SelectGroup>
                 </SelectContent>
@@ -71,76 +90,113 @@ const CustomerDialog = () => {
             </div>
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">
+              {t("customerDialog.form.email.label")}
+            </Label>
             <Input
               id="email"
               value=""
-              placeholder="example@email.com"
+              placeholder={t("customerDialog.form.email.placeholder")}
               className="col-span-3"
             />
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">Phone</Label>
+            <Label htmlFor="name">{t("customerDialog.form.phone.label")}</Label>
             <Input
               id="name"
               value=""
-              placeholder="0 (5xx) xxx xxxx"
+              placeholder={t("customerDialog.form.phone.placeholder")}
               className="col-span-3"
             />
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="address">Address</Label>
+            <Label htmlFor="address">
+              {t("customerDialog.form.address.label")}
+            </Label>
             <Textarea
               id="address"
               value=""
-              placeholder="Customer address..."
+              placeholder={t("customerDialog.form.address.placeholder")}
               className="col-span-3"
             />
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">District</Label>
+            <Label htmlFor="name">
+              {t("customerDialog.form.district.label")}
+            </Label>
             <Select>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a district" />
+                <SelectValue
+                  placeholder={t("customerDialog.form.district.placeholder")}
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Districts</SelectLabel>
+                  <SelectLabel>
+                    {t("customerDialog.form.district.selectLabel")}
+                  </SelectLabel>
                   <SelectItem value="maltepe">Maltepe</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">Province</Label>
+            <Label htmlFor="name">
+              {t("customerDialog.form.province.label")}
+            </Label>
             <Select>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a province" />
+                <SelectValue
+                  placeholder={t("customerDialog.form.province.placeholder")}
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Provinces</SelectLabel>
+                  <SelectLabel>
+                    {t("customerDialog.form.province.selectLabel")}
+                  </SelectLabel>
                   <SelectItem value="istanbul">İstanbul</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">Representative</Label>
-            <Input id="name" value="" className="col-span-3" />
+            <Label htmlFor="name">
+              {t("customerDialog.form.representative.label")}
+            </Label>
+            <Input
+              id="name"
+              value=""
+              placeholder={t("customerDialog.form.representative.placeholder")}
+              className="col-span-3"
+            />
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">Manager</Label>
-            <Input id="name" value="" className="col-span-3" />
+            <Label htmlFor="name">
+              {t("customerDialog.form.manager.label")}
+            </Label>
+            <Input
+              id="name"
+              value=""
+              placeholder={t("customerDialog.form.manager.placeholder")}
+              className="col-span-3"
+            />
           </div>
           <div className="grid items-center gap-2">
-            <Label htmlFor="name">Referrer</Label>
-            <Input id="name" value="" className="col-span-3" />
+            <Label htmlFor="name">
+              {t("customerDialog.form.referrer.label")}
+            </Label>
+            <Input
+              id="name"
+              value=""
+              placeholder={t("customerDialog.form.referrer.placeholder")}
+              className="col-span-3"
+            />
           </div>
         </div>
         <DialogFooter className="gap-2">
-          <Button variant="destructive">Discard</Button>
-          <Button type="submit">Save</Button>
+          <Button variant="destructive">{t("customerDialog.discard")}</Button>
+          <Button type="submit">{t("customerDialog.save")}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

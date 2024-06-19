@@ -24,18 +24,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Table as ReactTable } from "@tanstack/react-table";
 
 import { DataTablePagination } from "./data-table-pagination";
-import { DataTableToolbar } from "../../app/[locale]/home/customers/components/data-table/data-table-toolbar";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  sendTableData: (table: ReactTable<TData>) => void;
+  children?: React.ReactNode;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  sendTableData,
+  children,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -67,9 +71,13 @@ export function DataTable<TData, TValue>({
     getFacetedUniqueValues: getFacetedUniqueValues(),
   });
 
+  React.useEffect(() => {
+    sendTableData(table);
+  }, [table]);
+
   return (
     <div className="space-y-4">
-      <DataTableToolbar table={table} />
+      {children}
       <div className="rounded-md border shadow bg-white ">
         <Table>
           <TableHeader>

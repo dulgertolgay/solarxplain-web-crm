@@ -8,27 +8,27 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { customerTypes } from "../../constants/types";
 import { customerSchema } from "../../constants/types";
+import { useTranslation } from "react-i18next";
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
+  handleEdit: () => void;
+  handleDelete: () => void;
 }
 
 export function DataTableRowActions<TData>({
   row,
+  handleEdit,
+  handleDelete,
 }: DataTableRowActionsProps<TData>) {
-  const task = customerSchema.parse(row.original);
+  const { t } = useTranslation();
+  const customer = customerSchema.parse(row.original);
 
   return (
     <DropdownMenu>
@@ -42,23 +42,12 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
+        <DropdownMenuItem onClick={handleEdit}>
+          {t("table.actions.edit")}
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Customer Types</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={task.label}>
-              {customerTypes.map((type) => (
-                <DropdownMenuRadioItem key={type.value} value={type.value}>
-                  {type.label}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Delete
+        <DropdownMenuItem onClick={handleDelete}>
+          {t("table.actions.delete")}
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>

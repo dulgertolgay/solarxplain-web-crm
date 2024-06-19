@@ -1,1 +1,83 @@
-{}
+{
+  "title": "Müşteriler",
+  "desc": "Müşterilerinizi buradan yönetin. Müşteri profillerini ekleyin, düzenleyin veya silin.",
+  "table": {
+    "columns": {
+      "name": "Tam Ad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "district": "İlçe",
+      "province": "İl",
+      "address": "Adres",
+      "representative": "Satış Temsilcisi",
+      "manager": "Proje Yöneticisi",
+      "referrer": "Yönlendiren"
+    },
+    "toolbar": {
+      "customerTypes": {
+        "label": "Müşteri Türleri",
+        "options": {
+          "residential": "Konut",
+          "commercial": "Ticari"
+        }
+      },
+      "export": "Dışa aktar"
+    },
+    "actions": {
+      "edit": "Düzenle",
+      "delete": "Sil"
+    }
+  },
+  "customerDialog": {
+    "add": "Müşteri Ekle",
+    "addDesc": "Buraya yeni bir müşteri profili ekleyin. İşiniz bittiğinde kaydet'e tıklayın.",
+    "edit": "Müşteriyi Düzenle",
+    "editDesc": "Müşteri profilinde değişiklikleri burada yapın. İşiniz bittiğinde kaydet'e tıklayın.",
+    "discard": "Değişiklikleri İptal Et",
+    "save": "Kaydet",
+    "form": {
+      "name": {
+        "label": "Tam Ad",
+        "placeholder": "John Doe"
+      },
+      "customerType": {
+        "label": "Müşteri Türü",
+        "placeholder": "Müşteri türünü seçin"
+      },
+      "email": {
+        "label": "E-posta",
+        "placeholder": "örnek@e-posta.com"
+      },
+      "phone": {
+        "label": "Telefon",
+        "placeholder": "0 (5xx) xxx xxxx"
+      },
+      "district": {
+        "label": "İlçe",
+        "placeholder": "Bir ilçe seçin",
+        "selectLabel": "Bölgeler"
+      },
+      "province": {
+        "label": "İl",
+        "placeholder": "Bir il seçin",
+        "selectLabel": "İller"
+      },
+      "address": {
+        "label": "Adres",
+        "placeholder": "Müşteri adresi..."
+      },
+      "representative": {
+        "label": "Satış Temsilcisi",
+        "placeholder": "Satış temsilcisini girin"
+      },
+      "manager": {
+        "label": "Proje Yöneticisi",
+        "placeholder": "Proje yöneticisine girin"
+      },
+      "referrer": {
+        "label": "Yönlendiren",
+        "placeholder": "Yönlendireni girin"
+      }
+    }
+  }
+}

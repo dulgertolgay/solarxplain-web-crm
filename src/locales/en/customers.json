@@ -1,1 +1,83 @@
-{}
+{
+  "title": "Customers",
+  "desc": "Manage your customers here. Add, edit, or delete customer profiles.",
+  "table": {
+    "columns": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "district": "District",
+      "province": "Province",
+      "address": "Address",
+      "representative": "Sales Representative",
+      "manager": "Project Manager",
+      "referrer": "Referrer"
+    },
+    "toolbar": {
+      "customerTypes": {
+        "label": "Customer Types",
+        "options": {
+          "residential": "Residential",
+          "commercial": "Commercial"
+        }
+      },
+      "export": "Export"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "customerDialog": {
+    "add": "Add Customer",
+    "addDesc": "Add a new customer profile here. Click save when you're done.",
+    "edit": "Edit Customer",
+    "editDesc": "Make changes to customer's profile here. Click save when you're done.",
+    "discard": "Discard Changes",
+    "save": "Save",
+    "form": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "John Doe"
+      },
+      "customerType": {
+        "label": "Customer Type",
+        "placeholder": "Select a customer type"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "example@email.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "0 (5xx) xxx xxxx"
+      },
+      "district": {
+        "label": "District",
+        "placeholder": "Select a district",
+        "selectLabel": "Districts"
+      },
+      "province": {
+        "label": "Province",
+        "placeholder": "Select a province",
+        "selectLabel": "Provinces"
+      },
+      "address": {
+        "label": "Address",
+        "placeholder": "Customer address..."
+      },
+      "representative": {
+        "label": "Sales Representative",
+        "placeholder": "Enter sales representative"
+      },
+      "manager": {
+        "label": "Project Manager",
+        "placeholder": "Enter project manager"
+      },
+      "referrer": {
+        "label": "Referrer",
+        "placeholder": "Enter referrer"
+      }
+    }
+  }
+}
