@@ -46,7 +46,7 @@ const Links: {
   },
   {
     title: "Projects",
-    href: "/home/project",
+    href: "/home/projects",
     icon: Package,
   },
   {

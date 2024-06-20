@@ -1,0 +1,48 @@
+{
+  "title": "Projeler",
+  "desc": "Projelerinizi burada yönetin. Proje ekleyin, düzenleyin veya silin.",
+  "add": "Proje Ekle",
+  "table": {
+    "columns": {
+      "project_no": "Proje No",
+      "project_name": "Proje Adı",
+      "district": "İlçe",
+      "province": "İl",
+      "dc_power": "DC Gücü",
+      "ac_power": "AC Gücü",
+      "site_visit_status": "Saha Ziyareti Durumu",
+      "offer_status": "Teklif Durumu",
+      "project_status": "Proje Durumu"
+    },
+    "toolbar": {
+      "searchPlaceholder": "Proje ara",
+      "siteVisitStatuses": {
+        "label": "Saha Ziyareti Durumu",
+        "options": {
+          "completed": "Tamamlandı",
+          "not-completed": "Tamamlanmadı"
+        }
+      },
+      "offerStatuses": {
+        "label": "Teklif Durumu",
+        "options": {
+          "preparing": "Hazırlanıyor",
+          "on-review": "İncelemede",
+          "sent": "Gönderildi"
+        }
+      },
+      "projectStatuses": {
+        "label": "Proje Durumu",
+        "options": {
+          "active": "Aktif",
+          "inactive": "Pasif"
+        }
+      },
+      "export": "Dışa Aktar"
+    },
+    "actions": {
+      "edit": "Düzenle",
+      "delete": "Sil"
+    }
+  }
+}

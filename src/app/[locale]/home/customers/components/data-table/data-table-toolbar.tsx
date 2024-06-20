@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { File } from "lucide-react";
-import { Cross2Icon } from "@radix-ui/react-icons";
 import { Table } from "@tanstack/react-table";
 import { customerTypes, Customer } from "../../constants/types";
 
@@ -20,20 +20,20 @@ export function DataTableToolbar<Customer>({
   table,
 }: DataTableToolbarProps<Customer>) {
   const { t } = useTranslation();
-  const isFiltered = table.getState().columnFilters.length > 0;
+  const [search, setSearch] = useState<string>("");
 
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Search customer..."
-          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
-          }
+          placeholder={t("table.toolbar.searchPlaceholder")}
+          value={search}
+          onChange={(event) => {
+            table.getColumn("name")?.setFilterValue(event.target.value);
+            setSearch(event.target.value);
+          }}
           className="h-8 w-[150px] lg:w-[250px] bg-background shadow-sm"
         />
-
         {table.getColumn("name") && (
           <DataTableFacetedFilter
             column={table.getColumn("name")}
@@ -45,16 +45,6 @@ export function DataTableToolbar<Customer>({
               };
             })}
           />
-        )}
-        {isFiltered && (
-          <Button
-            variant="ghost"
-            onClick={() => table.resetColumnFilters()}
-            className="h-8 px-2 lg:px-3"
-          >
-            {t("translations:table.toolbar.reset")}
-            <Cross2Icon className="ml-2 h-4 w-4" />
-          </Button>
         )}
       </div>
       <div className="flex gap-2">

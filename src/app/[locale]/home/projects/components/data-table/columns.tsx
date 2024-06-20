@@ -4,14 +4,17 @@ import { useTranslation } from "react-i18next";
 import { ColumnDef } from "@tanstack/react-table";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
 
-import { customerTypes } from "../../constants/types";
-import { Customer } from "../../constants/types";
+import {
+  siteVisitStatuses,
+  offerStatuses,
+  projectStatuses,
+} from "../../constants/types";
+import { Project } from "../../constants/types";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
 
-const handleEdit = (row: Customer) => () => {
+const handleEdit = (row: Project) => () => {
   // TODO: Implement edit functionality
   console.log("Edit", row);
 };
@@ -21,7 +24,7 @@ const handleDelete = (id: string) => () => {
   console.log("Delete", id);
 };
 
-export const getColumns = (): ColumnDef<Customer>[] => {
+export const getColumns = (): ColumnDef<Project>[] => {
   const { t } = useTranslation();
   return [
     {
@@ -48,56 +51,29 @@ export const getColumns = (): ColumnDef<Customer>[] => {
       enableSorting: false,
     },
     {
-      accessorKey: "name",
+      accessorKey: "project_no",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.name")}
+          title={t("table.columns.project_no")}
         />
       ),
-      cell: ({ row }) => {
-        const type = customerTypes.find(
-          (type) => type.value === row.original.customerType
-        );
-
-        return (
-          <div className="flex space-x-2">
-            <span className="min-w-[100px] max-w-[300px] truncate font-medium">
-              {row.getValue("name")}
-            </span>
-            {type && <Badge variant="outline">{type.label}</Badge>}
-          </div>
-        );
-      },
+      cell: ({ row }) => row.getValue("project_no"),
+      enableSorting: false,
+    },
+    {
+      accessorKey: "project_name",
+      header: ({ column }) => (
+        <DataTableColumnHeader
+          column={column}
+          title={t("table.columns.project_name")}
+        />
+      ),
+      cell: ({ row }) => row.getValue("project_name"),
+      enableSorting: false,
       filterFn: (row, id, value) => {
-        return row.original.name.toLocaleLowerCase().includes(value);
+        return row.original.project_name.toLocaleLowerCase().includes(value);
       },
-      enableSorting: false,
-      enableHiding: false,
-    },
-    {
-      accessorKey: "email",
-      header: ({ column }) => (
-        <DataTableColumnHeader
-          column={column}
-          title={t("table.columns.email")}
-        />
-      ),
-      cell: ({ row }) => row.getValue("email"),
-      enableSorting: false,
-      enableHiding: false,
-    },
-    {
-      accessorKey: "phone",
-      header: ({ column }) => (
-        <DataTableColumnHeader
-          column={column}
-          title={t("table.columns.phone")}
-        />
-      ),
-      cell: ({ row }) => row.getValue("phone"),
-      enableSorting: false,
-      enableHiding: false,
     },
     {
       accessorKey: "district",
@@ -122,48 +98,83 @@ export const getColumns = (): ColumnDef<Customer>[] => {
       enableSorting: false,
     },
     {
-      accessorKey: "address",
+      accessorKey: "dc_power",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.address")}
+          title={t("table.columns.dc_power")}
         />
       ),
-      cell: ({ row }) => row.getValue("address"),
+      cell: ({ row }) => row.getValue("dc_power"),
       enableSorting: false,
     },
     {
-      accessorKey: "representative",
+      accessorKey: "ac_power",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.representative")}
+          title={t("table.columns.ac_power")}
         />
       ),
-      cell: ({ row }) => row.getValue("representative"),
+      cell: ({ row }) => row.getValue("ac_power"),
       enableSorting: false,
     },
     {
-      accessorKey: "manager",
+      accessorKey: "site_visit_status",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.manager")}
+          title={t("table.columns.site_visit_status")}
         />
       ),
-      cell: ({ row }) => row.getValue("manager"),
+      cell: ({ row }) => {
+        const status = siteVisitStatuses[row.original.site_visit_status];
+
+        return t(`table.toolbar.siteVisitStatuses.options.${status}`);
+      },
+      filterFn: (row, id, value) => {
+        return value.includes(String(row.original.site_visit_status));
+      },
       enableSorting: false,
+      enableHiding: false,
     },
     {
-      accessorKey: "referrer",
+      accessorKey: "offer_status",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.referrer")}
+          title={t("table.columns.offer_status")}
         />
       ),
-      cell: ({ row }) => row.getValue("referrer"),
+      cell: ({ row }) => {
+        const status = offerStatuses[row.original.offer_status];
+
+        return t(`table.toolbar.offerStatuses.options.${status}`);
+      },
+      filterFn: (row, id, value) => {
+        return value.includes(String(row.original.offer_status));
+      },
       enableSorting: false,
+      enableHiding: false,
+    },
+    {
+      accessorKey: "project_status",
+      header: ({ column }) => (
+        <DataTableColumnHeader
+          column={column}
+          title={t("table.columns.project_status")}
+        />
+      ),
+      cell: ({ row }) => {
+        const status = projectStatuses[row.original.project_status];
+
+        return t(`table.toolbar.projectStatuses.options.${status}`);
+      },
+      filterFn: (row, id, value) => {
+        return value.includes(String(row.original.project_status));
+      },
+      enableSorting: false,
+      enableHiding: false,
     },
     {
       id: "actions",

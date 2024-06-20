@@ -27,6 +27,7 @@ import {
 import { Table as ReactTable } from "@tanstack/react-table";
 
 import { DataTablePagination } from "./data-table-pagination";
+import useDeepCompareEffect from "@/lib/hooks";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -71,9 +72,9 @@ export function DataTable<TData, TValue>({
     getFacetedUniqueValues: getFacetedUniqueValues(),
   });
 
-  React.useEffect(() => {
+  useDeepCompareEffect(() => {
     sendTableData(table);
-  }, [table]);
+  }, table);
 
   return (
     <div className="space-y-4">
@@ -110,7 +111,10 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell
+                      key={cell.id}
+                      className="whitespace-nowrap text-ellipsis overflow-hidden min-w-[100px] max-w-[250px]"
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

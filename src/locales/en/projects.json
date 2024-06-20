@@ -1,0 +1,48 @@
+{
+  "title": "Projects",
+  "desc": "Manage your projects here. Add, edit, or delete projects.",
+  "add": "Add Project",
+  "table": {
+    "columns": {
+      "project_no": "Project No",
+      "project_name": "Project Name",
+      "district": "District",
+      "province": "Province",
+      "dc_power": "DC Power",
+      "ac_power": "AC Power",
+      "site_visit_status": "Site Visit Status",
+      "offer_status": "Offer Status",
+      "project_status": "Project Status"
+    },
+    "toolbar": {
+      "searchPlaceholder": "Search project",
+      "siteVisitStatuses": {
+        "label": "Site Visit Status",
+        "options": {
+          "completed": "Completed",
+          "not-completed": "Not Completed"
+        }
+      },
+      "offerStatuses": {
+        "label": "Offer Status",
+        "options": {
+          "preparing": "Preparing",
+          "on-review": "On Review",
+          "sent": "Sent"
+        }
+      },
+      "projectStatuses": {
+        "label": "Project Status",
+        "options": {
+          "active": "Active",
+          "inactive": "Inactive"
+        }
+      },
+      "export": "Export"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  }
+}
