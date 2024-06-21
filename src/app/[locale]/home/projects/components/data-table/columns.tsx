@@ -14,11 +14,6 @@ import { Project } from "../../constants/types";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
 
-const handleEdit = (row: Project) => () => {
-  // TODO: Implement edit functionality
-  console.log("Edit", row);
-};
-
 const handleDelete = (id: string) => () => {
   // TODO: Implement delete functionality
   console.log("Delete", id);
@@ -179,11 +174,7 @@ export const getColumns = (): ColumnDef<Project>[] => {
     {
       id: "actions",
       cell: ({ row }) => (
-        <DataTableRowActions
-          row={row}
-          handleEdit={handleEdit(row.original)}
-          handleDelete={handleDelete(row.id)}
-        />
+        <DataTableRowActions row={row} handleDelete={handleDelete(row.id)} />
       ),
     },
   ];

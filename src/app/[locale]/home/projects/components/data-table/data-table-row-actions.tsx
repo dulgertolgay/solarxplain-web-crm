@@ -2,6 +2,7 @@
 
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Row } from "@tanstack/react-table";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,13 +19,11 @@ import { useTranslation } from "react-i18next";
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
-  handleEdit: () => void;
   handleDelete: () => void;
 }
 
 export function DataTableRowActions<TData>({
   row,
-  handleEdit,
   handleDelete,
 }: DataTableRowActionsProps<TData>) {
   const { t } = useTranslation();
@@ -42,9 +41,9 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem onClick={handleEdit}>
-          {t("table.actions.edit")}
-        </DropdownMenuItem>
+        <Link href={`/home/projects/${project.id}`}>
+          <DropdownMenuItem>{t("table.actions.edit")}</DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleDelete}>
           {t("table.actions.delete")}

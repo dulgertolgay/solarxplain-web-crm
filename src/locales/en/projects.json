@@ -44,5 +44,108 @@
       "edit": "Edit",
       "delete": "Delete"
     }
+  },
+  "project_details": {
+    "back": "Back",
+    "discard": "Discard",
+    "save": "Save Project",
+    "location_form": {
+      "title": "Project Location",
+      "desc": "Fill in the project location details.",
+      "facility": {
+        "label": "Production & Consumption Facility",
+        "placeholder": "Select facility",
+        "searchPlaceholder": "Search facility"
+      },
+      "construction_site": {
+        "label": "Construction Site",
+        "placeholder": "Select construction site",
+        "searchPlaceholder": "Search construction site"
+      },
+      "district": {
+        "label": "District",
+        "placeholder": "District",
+        "searchPlaceholder": "Search district"
+      },
+      "province": {
+        "label": "Province",
+        "placeholder": "Province",
+        "searchPlaceholder": "Search province"
+      },
+      "neighborhood": {
+        "label": "Neighborhood",
+        "placeholder": "Neighborhood",
+        "searchPlaceholder": "Search neighborhood"
+      },
+      "block_number": {
+        "label": "Block Number",
+        "placeholder": "Enter block number"
+      },
+      "plot_number": {
+        "label": "Plot Number",
+        "placeholder": "Enter plot number"
+      },
+      "latitude": {
+        "label": "Latitude",
+        "placeholder": "Enter latitude"
+      },
+      "longitude": {
+        "label": "Longitude",
+        "placeholder": "Enter longitude"
+      }
+    },
+    "details_form": {
+      "title": "Project Details",
+      "desc": "Fill in the project details.",
+      "regulation_article": {
+        "label": "Regulation Article",
+        "placeholder": "Select regulation article",
+        "searchPlaceholder": "Search regulation article"
+      },
+      "connection_level": {
+        "label": "Connection Level",
+        "placeholder": "Select connection level",
+        "searchPlaceholder": "Search connection level"
+      },
+      "subscription_type": {
+        "label": "Subscription Type",
+        "placeholder": "Select subscription type"
+      },
+      "subscription_group": {
+        "label": "Subscription Group",
+        "placeholder": "Select subscription group"
+      },
+      "distribution_company": {
+        "label": "Distribution Company",
+        "placeholder": "Select distribution company",
+        "searchPlaceholder": "Search distribution company"
+      },
+      "power": {
+        "label": "Power",
+        "placeholder": "1000",
+        "unit": "kWe"
+      },
+      "installation_start_date": {
+        "label": "Installation Start Date",
+        "placeholder": "Pick start date",
+        "helperText": "The predicted date when the installation will start."
+      }
+    },
+    "additional_info": {
+      "title": "Additional Information",
+      "desc": "Fill in the additional information.",
+      "application_status": {
+        "label": "Application Status",
+        "placeholder": "Select application status"
+      },
+      "investment_incentive": {
+        "label": "Investment Incentive",
+        "placeholder": "Select investment incentive"
+      },
+      "notes": {
+        "label": "Notes",
+        "placeholder": "Enter notes"
+      }
+    }
   }
 }

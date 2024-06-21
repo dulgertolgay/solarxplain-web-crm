@@ -35,7 +35,7 @@
         "label": "Proje Durumu",
         "options": {
           "active": "Aktif",
-          "inactive": "Pasif"
+          "inactive": "Aktif Değil"
         }
       },
       "export": "Dışa Aktar"
@@ -43,6 +43,109 @@
     "actions": {
       "edit": "Düzenle",
       "delete": "Sil"
+    }
+  },
+  "project_details": {
+    "back": "Geri",
+    "discard": "Vazgeç",
+    "save": "Projeyi Kaydet",
+    "location_form": {
+      "title": "Proje Lokasyonu",
+      "desc": "Proje lokasyon detaylarını doldurun.",
+      "facility": {
+        "label": "Üretim ve Tüketim Tesisi",
+        "placeholder": "Tesisi seçin",
+        "searchPlaceholder": "Tesisi ara"
+      },
+      "construction_site": {
+        "label": "İnşaat Alanı",
+        "placeholder": "İnşaat alanını seçin",
+        "searchPlaceholder": "İnşaat alanını ara"
+      },
+      "district": {
+        "label": "İlçe",
+        "placeholder": "İlçe",
+        "searchPlaceholder": "İlçe ara"
+      },
+      "province": {
+        "label": "İl",
+        "placeholder": "İl",
+        "searchPlaceholder": "İl ara"
+      },
+      "neighborhood": {
+        "label": "Mahalle",
+        "placeholder": "Mahalle",
+        "searchPlaceholder": "Mahalle ara"
+      },
+      "block_number": {
+        "label": "Ada Numarası",
+        "placeholder": "Ada numarasını girin"
+      },
+      "plot_number": {
+        "label": "Parsel Numarası",
+        "placeholder": "Parsel numarasını girin"
+      },
+      "latitude": {
+        "label": "Enlem",
+        "placeholder": "Enlemi girin"
+      },
+      "longitude": {
+        "label": "Boylam",
+        "placeholder": "Boylamı girin"
+      }
+    },
+    "details_form": {
+      "title": "Proje Detayları",
+      "desc": "Proje detaylarını doldurun.",
+      "regulation_article": {
+        "label": "Mevzuat Maddesi",
+        "placeholder": "Mevzuat maddesini seçin",
+        "searchPlaceholder": "Mevzuat maddesini ara"
+      },
+      "connection_level": {
+        "label": "Bağlantı Seviyesi",
+        "placeholder": "Bağlantı seviyesini seçin",
+        "searchPlaceholder": "Bağlantı seviyesini ara"
+      },
+      "subscription_type": {
+        "label": "Abonelik Türü",
+        "placeholder": "Abonelik türünü seçin"
+      },
+      "subscription_group": {
+        "label": "Abonelik Grubu",
+        "placeholder": "Abonelik grubunu seçin"
+      },
+      "distribution_company": {
+        "label": "Dağıtım Şirketi",
+        "placeholder": "Dağıtım şirketini seçin",
+        "searchPlaceholder": "Dağıtım şirketini ara"
+      },
+      "power": {
+        "label": "Güç",
+        "placeholder": "1000",
+        "unit": "kWe"
+      },
+      "installation_start_date": {
+        "label": "Kurulum Başlangıç Tarihi",
+        "placeholder": "Başlangıç tarihini seçin",
+        "helperText": "Kurulumun başlayacağı tahmini tarih."
+      }
+    },
+    "additional_info": {
+      "title": "Ek Bilgiler",
+      "desc": "Ek bilgileri doldurun.",
+      "application_status": {
+        "label": "Başvuru Durumu",
+        "placeholder": "Başvuru durumunu seçin"
+      },
+      "investment_incentive": {
+        "label": "Yatırım Teşviki",
+        "placeholder": "Yatırım teşvikini seçin"
+      },
+      "notes": {
+        "label": "Notlar",
+        "placeholder": "Notları girin"
+      }
     }
   }
 }
