@@ -5,12 +5,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Checkbox } from "@/components/ui/checkbox";
 
-import {
-  siteVisitStatuses,
-  offerStatuses,
-  projectStatuses,
-} from "../../constants/types";
-import { Project } from "../../constants/types";
+import { SiteVisit } from "../../constants/types";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
 
@@ -19,7 +14,7 @@ const handleDelete = (id: string) => () => {
   console.log("Delete", id);
 };
 
-export const getColumns = (): ColumnDef<Project>[] => {
+export const getColumns = (): ColumnDef<SiteVisit>[] => {
   const { t } = useTranslation();
   return [
     {
@@ -44,6 +39,7 @@ export const getColumns = (): ColumnDef<Project>[] => {
         />
       ),
       enableSorting: false,
+      enableHiding: false,
     },
     {
       accessorKey: "project_no",
@@ -95,81 +91,73 @@ export const getColumns = (): ColumnDef<Project>[] => {
       enableSorting: false,
     },
     {
-      accessorKey: "dc_power",
+      accessorKey: "address",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.dc_power")}
+          title={t("table.columns.address")}
         />
       ),
-      cell: ({ row }) => row.getValue("dc_power"),
+      cell: ({ row }) => row.getValue("address"),
       enableSorting: false,
     },
     {
-      accessorKey: "ac_power",
+      accessorKey: "employee_in_charge.name",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.ac_power")}
+          title={t("table.columns.employee_in_charge.name")}
         />
       ),
-      cell: ({ row }) => row.getValue("ac_power"),
-      enableSorting: false,
-    },
-    {
-      accessorKey: "site_visit_status",
-      header: ({ column }) => (
-        <DataTableColumnHeader
-          column={column}
-          title={t("table.columns.site_visit_status")}
-        />
-      ),
-      cell: ({ row }) => {
-        const status = siteVisitStatuses[row.original.site_visit_status];
-
-        return t(`table.toolbar.siteVisitStatuses.options.${status}`);
-      },
-      filterFn: (row, id, value) => {
-        return value.includes(String(row.original.site_visit_status));
-      },
+      cell: ({ row }) => row.original.employee_in_charge.name,
       enableSorting: false,
       enableHiding: false,
     },
     {
-      accessorKey: "offer_status",
+      id: "employee_in_charge.email",
+      accessorKey: "employee_in_charge.email",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.offer_status")}
+          title={t("table.columns.employee_in_charge.email")}
         />
       ),
-      cell: ({ row }) => {
-        const status = offerStatuses[row.original.offer_status];
-
-        return t(`table.toolbar.offerStatuses.options.${status}`);
-      },
-      filterFn: (row, id, value) => {
-        return value.includes(String(row.original.offer_status));
-      },
+      cell: ({ row }) => row.original.employee_in_charge.email,
+      enableSorting: false,
+    },
+    {
+      id: "employee_in_charge.phone",
+      accessorKey: "employee_in_charge.phone",
+      header: ({ column }) => (
+        <DataTableColumnHeader
+          column={column}
+          title={t("table.columns.employee_in_charge.phone")}
+        />
+      ),
+      cell: ({ row }) => row.original.employee_in_charge.phone,
+      enableSorting: false,
+    },
+    {
+      accessorKey: "subcontractor",
+      header: ({ column }) => (
+        <DataTableColumnHeader
+          column={column}
+          title={t("table.columns.subcontractor")}
+        />
+      ),
+      cell: ({ row }) => row.getValue("subcontractor"),
       enableSorting: false,
       enableHiding: false,
     },
     {
-      accessorKey: "project_status",
+      accessorKey: "site_visit_date",
       header: ({ column }) => (
         <DataTableColumnHeader
           column={column}
-          title={t("table.columns.project_status")}
+          title={t("table.columns.site_visit_date")}
         />
       ),
-      cell: ({ row }) => {
-        const status = projectStatuses[row.original.project_status];
-
-        return t(`table.toolbar.projectStatuses.options.${status}`);
-      },
-      filterFn: (row, id, value) => {
-        return value.includes(String(row.original.project_status));
-      },
+      cell: ({ row }) => row.getValue("site_visit_date"),
       enableSorting: false,
       enableHiding: false,
     },

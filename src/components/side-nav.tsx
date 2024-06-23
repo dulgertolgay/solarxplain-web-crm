@@ -50,8 +50,8 @@ const Links: {
     icon: Package,
   },
   {
-    title: "Site Visit",
-    href: "/home/site-visit",
+    title: "Site Visits",
+    href: "/home/site-visits",
     icon: DraftingCompass,
   },
   {

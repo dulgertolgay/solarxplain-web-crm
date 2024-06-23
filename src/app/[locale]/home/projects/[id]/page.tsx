@@ -26,12 +26,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { InfoTooltip } from "@/components/common/info-tooltip";
 
 const i18nNamespaces = ["projects", "translations"];
 
@@ -530,18 +525,11 @@ const ProjectDetails = async ({
                           "project_details.details_form.installation_start_date.label"
                         )}
                       </Label>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip delayDuration={100}>
-                          <TooltipTrigger asChild>
-                            <Info className="h-4 w-4" />
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            {t(
-                              "project_details.details_form.installation_start_date.helperText"
-                            )}
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                      <InfoTooltip
+                        content={t(
+                          "project_details.details_form.installation_start_date.helperText"
+                        )}
+                      />
                     </div>
                     <DatePicker
                       id="installation_start_date"

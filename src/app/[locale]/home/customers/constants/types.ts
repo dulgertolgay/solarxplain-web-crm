@@ -18,7 +18,7 @@ export const customerSchema = z.object({
   customerType: z.string(),
   name: z.string(),
   email: z.string().email(),
-  phone: z.string().refine((val) => phoneRegex.test(val)),
+  phone: z.string().regex(phoneRegex),
   district: z.string(),
   province: z.string(),
   address: z.string(),

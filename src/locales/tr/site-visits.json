@@ -1,0 +1,240 @@
+{
+  "title": "Site Ziyaretleri",
+  "desc": "Site ziyaretlerinizi burada yönetin. Site ziyareti ekleyin, düzenleyin veya silin.",
+  "add": "Site Ziyareti Ekle",
+  "table": {
+    "columns": {
+      "project_no": "Proje No",
+      "project_name": "Proje Adı",
+      "district": "İlçe",
+      "province": "İl",
+      "address": "Adres",
+      "employee_in_charge": {
+        "name": "Sorumlu Kişi",
+        "email": "İşveren E-posta",
+        "phone": "İşveren Telefon"
+      },
+      "subcontractor": "Taşeron",
+      "site_visit_date": "Site Ziyaret Tarihi"
+    },
+    "toolbar": {
+      "searchPlaceholder": "Site ziyareti ara",
+      "export": "Dışa Aktar"
+    },
+    "actions": {
+      "edit": "Düzenle",
+      "delete": "Sil"
+    }
+  },
+  "site_visit_details": {
+    "title": "Site Ziyareti",
+    "back": "Geri",
+    "discard": "Vazgeç",
+    "save": "Site Ziyaretini Kaydet",
+    "main_form": {
+      "title": "Çatı Site Ziyaret Formu",
+      "desc": "Site ziyaret detaylarını doldurun.",
+      "number_of_roofs": {
+        "label": "Çatı Sayısı",
+        "placeholder": "Çatı sayısını girin"
+      },
+      "employee_in_charge": {
+        "label": "Sorumlu Kişi",
+        "placeholder": "Sorumlu kişiyi seçin",
+        "searchPlaceholder": "Sorumlu kişi ara"
+      },
+      "employee_email": {
+        "label": "Çalışan E-postası",
+        "placeholder": "Çalışan e-postasını girin"
+      },
+      "employee_phone": {
+        "label": "Çalışan Telefonu",
+        "placeholder": "Çalışan telefonunu girin"
+      },
+      "site_visit_date": {
+        "label": "Site Ziyaret Tarihi",
+        "placeholder": "Site ziyaret tarihini seçin"
+      }
+    },
+    "site_visit_files": {
+      "title": "Site Ziyaret Dosyaları",
+      "desc": "Site ziyaret dosyalarını buraya yükleyin.",
+      "upload": "Yükle"
+    },
+    "structural_features": {
+      "title": "Yapısal Özellikler",
+      "desc": "Yapısal özellikleri doldurun.",
+      "structure_type": {
+        "label": "Yapı Tipi",
+        "placeholder": "Yapı tipini seçin",
+        "searchPlaceholder": "Yapı tipi ara"
+      },
+      "purlin_type": {
+        "label": "Kiriş Tipi",
+        "placeholder": "Kiriş tipini seçin",
+        "searchPlaceholder": "Kiriş tipi ara"
+      },
+      "coating_type": {
+        "label": "Kaplama Tipi",
+        "placeholder": "Kaplama tipini seçin",
+        "searchPlaceholder": "Kaplama tipi ara"
+      },
+      "insulation_type": {
+        "label": "Yalıtım Tipi",
+        "placeholder": "Yalıtım tipini seçin",
+        "searchPlaceholder": "Yalıtım tipi ara"
+      },
+      "direction": {
+        "label": "Yön",
+        "placeholder": "Yönü seçin",
+        "searchPlaceholder": "Yön ara"
+      },
+      "slope": {
+        "label": "Eğim",
+        "placeholder": "Eğimi girin",
+        "unit": "%"
+      },
+      "parapet_type": {
+        "label": "Parapet Tipi",
+        "placeholder": "Parapet tipini seçin",
+        "searchPlaceholder": "Parapet tipi ara"
+      },
+      "parapet_height": {
+        "label": "Parapet Yüksekliği",
+        "placeholder": "Parapet yüksekliğini girin",
+        "unit": "cm"
+      },
+      "ridge_top_size": {
+        "label": "Mahya Üstü Boyutu",
+        "placeholder": "Mahya üstü boyutunu girin",
+        "unit": "cm"
+      },
+      "purlin_distance": {
+        "label": "Kiriş Mesafesi",
+        "placeholder": "Kiriş mesafesini girin",
+        "unit": "cm"
+      },
+      "pitch_width": {
+        "label": "Açıklık Genişliği",
+        "placeholder": "Açıklık genişliğini girin",
+        "unit": "cm"
+      },
+      "distance_between_pitches": {
+        "label": "Açıklıklar Arası Mesafe",
+        "placeholder": "Açıklıklar arası mesafeyi girin",
+        "unit": "cm"
+      },
+      "renewal_requirement": {
+        "label": "Yenileme Gereksinimi",
+        "placeholder": "Yenileme gereksinimini seçin",
+        "searchPlaceholder": "Yenileme gereksinimi ara"
+      },
+      "building_height": {
+        "label": "Bina Yüksekliği",
+        "placeholder": "Bina yüksekliğini girin",
+        "unit": "m"
+      },
+      "lifeline_connection_possibility": {
+        "label": "Yaşam Hattı Bağlantı İmkânı",
+        "placeholder": "Yaşam hattı bağlantı imkânını seçin",
+        "searchPlaceholder": "Yaşam hattı bağlantı imkânı ara"
+      },
+      "lightning_clearance": {
+        "label": "Yıldırım Koruması",
+        "placeholder": "Yıldırım korumasını seçin",
+        "searchPlaceholder": "Yıldırım koruması ara"
+      },
+      "notes": {
+        "label": "Genel Notlar",
+        "placeholder": "Genel notları girin"
+      }
+    },
+    "shadow_factors": {
+      "title": "Gölge Faktörleri",
+      "desc": "Gölge faktörlerini doldurun.",
+      "inner_shadow_factor": {
+        "label": "İç Gölge Faktörü",
+        "placeholder": "İç gölge faktörünü seçin",
+        "searchPlaceholder": "İç gölge faktörü ara",
+        "info_text": "İç gölge faktörü, binanın gölgesinin binanın küp olarak gölgesine oranıdır. İç gölge faktörü, binanın kendine gölge yapmasını hesaplamak için kullanılır."
+      },
+      "inner_shadow_factor_notes": {
+        "label": "İç Gölge Faktörü Notları",
+        "placeholder": "İç gölge faktörü notlarını girin"
+      },
+      "outer_shadow_factor": {
+        "label": "Dış Gölge Faktörü",
+        "placeholder": "Dış gölge faktörünü seçin",
+        "searchPlaceholder": "Dış gölge faktörü ara",
+        "info_text": "Dış gölge faktörü, binanın gölgesinin binanın küp olarak gölgesine oranıdır. Dış gölge faktörü, binanın çevre alanına gölge yapmasını hesaplamak için kullanılır."
+      },
+      "outer_shadow_factor_notes": {
+        "label": "Dış Gölge Faktörü Notları",
+        "placeholder": "Dış gölge faktörü notlarını girin"
+      }
+    },
+    "electrical_connection_features": {
+      "title": "Elektrik Bağlantı Özellikleri",
+      "desc": "Elektrik bağlantı özelliklerini doldurun.",
+      "inverter_location": {
+        "label": "İnverter Konumu",
+        "placeholder": "İnverter konumunu seçin",
+        "searchPlaceholder": "İnverter konumu ara"
+      },
+      "roof_descent": {
+        "label": "Çatı Eğim",
+        "placeholder": "Çatı eğimi seçin",
+        "searchPlaceholder": "Çatı eğimi ara"
+      },
+      "pv_inverter_distance": {
+        "label": "PV ve İnverter Arası Mesafe",
+        "placeholder": "PV - inverter mesafesini girin",
+        "unit": "m"
+      },
+      "inverter_panel_distance": {
+        "label": "İnverter ve Solar Panel Arası Mesafe",
+        "placeholder": "İnverter - solar panel mesafesini girin",
+        "unit": "m"
+      },
+      "connection_panel": {
+        "label": "Bağlantı Paneli",
+        "placeholder": "Bağlantı panelini seçin",
+        "searchPlaceholder": "Bağlantı paneli ara"
+      },
+      "tms_current_value": {
+        "label": "TMŞ Akım Değeri",
+        "placeholder": "TMŞ akım değerini girin",
+        "unit": "A"
+      },
+      "connection_cable_cross_section": {
+        "label": "Bağlantı Kablosu Kesiti",
+        "placeholder": "Bağlantı kablosu kesitini girin",
+        "unit": "cm"
+      },
+      "generator_status": {
+        "label": "Jeneratör Durumu",
+        "placeholder": "Jeneratör durumunu seçin",
+        "searchPlaceholder": "Jeneratör durumu ara"
+      },
+      "transformer_status": {
+        "label": "Trafo Durumu",
+        "placeholder": "Trafo durumunu seçin",
+        "searchPlaceholder": "Trafo durumu ara"
+      },
+      "transformer_type": {
+        "label": "Trafo Tipi",
+        "placeholder": "Trafo tipini seçin",
+        "searchPlaceholder": "Trafo tipi ara"
+      },
+      "transformer_power": {
+        "label": "Trafo Gücü",
+        "placeholder": "Trafo gücünü girin",
+        "unit": "kVA"
+      },
+      "number_of_panels": {
+        "label": "Güneş Paneli Sayısı",
+        "placeholder": "Güneş paneli sayısını girin"
+      }
+    }
+  }
+}

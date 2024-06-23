@@ -1,0 +1,240 @@
+{
+  "title": "Site Visits",
+  "desc": "Manage your site visits here. Add, edit, or delete site visits.",
+  "add": "Add Site Visit",
+  "table": {
+    "columns": {
+      "project_no": "Project No",
+      "project_name": "Project Name",
+      "district": "District",
+      "province": "Province",
+      "address": "Address",
+      "employee_in_charge": {
+        "name": "Person in Charge",
+        "email": "Employer Email",
+        "phone": "Employer Phone"
+      },
+      "subcontractor": "Subcontractor",
+      "site_visit_date": "Site Visit Date"
+    },
+    "toolbar": {
+      "searchPlaceholder": "Search site visit",
+      "export": "Export"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "site_visit_details": {
+    "title": "Site Visit",
+    "back": "Back",
+    "discard": "Discard",
+    "save": "Save Site Visit",
+    "main_form": {
+      "title": "Roof Site Visit Form",
+      "desc": "Fill in the site visit details.",
+      "number_of_roofs": {
+        "label": "Number of Roofs",
+        "placeholder": "Enter number of roofs"
+      },
+      "employee_in_charge": {
+        "label": "Employee in Charge",
+        "placeholder": "Select employee in charge",
+        "searchPlaceholder": "Search employee in charge"
+      },
+      "employee_email": {
+        "label": "Employee Email",
+        "placeholder": "Enter employee email"
+      },
+      "employee_phone": {
+        "label": "Employee Phone",
+        "placeholder": "Enter employee phone"
+      },
+      "site_visit_date": {
+        "label": "Site Visit Date",
+        "placeholder": "Pick site visit date"
+      }
+    },
+    "site_visit_files": {
+      "title": "Site Visit Files",
+      "desc": "Upload site visit files here.",
+      "upload": "Upload"
+    },
+    "structural_features": {
+      "title": "Structural Features",
+      "desc": "Fill in the structural features.",
+      "structure_type": {
+        "label": "Structure Type",
+        "placeholder": "Select structure type",
+        "searchPlaceholder": "Search structure type"
+      },
+      "purlin_type": {
+        "label": "Purlin Type",
+        "placeholder": "Select purlin type",
+        "searchPlaceholder": "Search purlin type"
+      },
+      "coating_type": {
+        "label": "Coating Type",
+        "placeholder": "Select coating type",
+        "searchPlaceholder": "Search coating type"
+      },
+      "insulation_type": {
+        "label": "Insulation Type",
+        "placeholder": "Select insulation type",
+        "searchPlaceholder": "Search insulation type"
+      },
+      "direction": {
+        "label": "Direction",
+        "placeholder": "Select direction",
+        "searchPlaceholder": "Search direction"
+      },
+      "slope": {
+        "label": "Slope",
+        "placeholder": "Enter slope",
+        "unit": "%"
+      },
+      "parapet_type": {
+        "label": "Parapet Type",
+        "placeholder": "Select parapet type",
+        "searchPlaceholder": "Search parapet type"
+      },
+      "parapet_height": {
+        "label": "Parapet Height",
+        "placeholder": "Enter parapet height",
+        "unit": "cm"
+      },
+      "ridge_top_size": {
+        "label": "Ridge Top Size",
+        "placeholder": "Enter ridge top size",
+        "unit": "cm"
+      },
+      "purlin_distance": {
+        "label": "Purlin Distance",
+        "placeholder": "Enter purlin distance",
+        "unit": "cm"
+      },
+      "pitch_width": {
+        "label": "Pitch Width",
+        "placeholder": "Enter pitch width",
+        "unit": "cm"
+      },
+      "distance_between_pitches": {
+        "label": "Distance Between Pitches",
+        "placeholder": "Enter distance between pitches",
+        "unit": "cm"
+      },
+      "renewal_requirement": {
+        "label": "Renewal Requirement",
+        "placeholder": "Select renewal requirement",
+        "searchPlaceholder": "Search renewal requirement"
+      },
+      "building_height": {
+        "label": "Building Height",
+        "placeholder": "Enter building height",
+        "unit": "m"
+      },
+      "lifeline_connection_possibility": {
+        "label": "Lifeline Connection Possibility",
+        "placeholder": "Select lifeline connection possibility",
+        "searchPlaceholder": "Search lifeline connection possibility"
+      },
+      "lightning_clearance": {
+        "label": "Lightning Clearance",
+        "placeholder": "Select lightning clearance",
+        "searchPlaceholder": "Search lightning clearance"
+      },
+      "notes": {
+        "label": "General Notes",
+        "placeholder": "Enter general notes"
+      }
+    },
+    "shadow_factors": {
+      "title": "Shadow Factors",
+      "desc": "Fill in the shadow factors.",
+      "inner_shadow_factor": {
+        "label": "Inner Shadow Factor",
+        "placeholder": "Select inner shadow factor",
+        "searchPlaceholder": "Search inner shadow factor",
+        "info_text": "The inner shadow factor is the ratio of the shadow cast by the building to the shadow cast by the building if it were a cube. The inner shadow factor is used to calculate the shadow cast by the building on itself."
+      },
+      "inner_shadow_factor_notes": {
+        "label": "Inner Shadow Factor Notes",
+        "placeholder": "Enter inner shadow factor notes"
+      },
+      "outer_shadow_factor": {
+        "label": "Outer Shadow Factor",
+        "placeholder": "Select outer shadow factor",
+        "searchPlaceholder": "Search outer shadow factor",
+        "info_text": "The outer shadow factor is the ratio of the shadow cast by the building to the shadow cast by the building if it were a cube. The outer shadow factor is used to calculate the shadow cast by the building on the surrounding area."
+      },
+      "outer_shadow_factor_notes": {
+        "label": "Outer Shadow Factor Notes",
+        "placeholder": "Enter outer shadow factor notes"
+      }
+    },
+    "electrical_connection_features": {
+      "title": "Electrical Connection Features",
+      "desc": "Fill in the electrical connection features.",
+      "inverter_location": {
+        "label": "Inverter Location",
+        "placeholder": "Select inverter location",
+        "searchPlaceholder": "Search inverter location"
+      },
+      "roof_descent": {
+        "label": "Roof Descent",
+        "placeholder": "Select roof descent",
+        "searchPlaceholder": "Search roof descent"
+      },
+      "pv_inverter_distance": {
+        "label": "Distance Between PV and Inverter Distance",
+        "placeholder": "Enter PV - inverter distance",
+        "unit": "m"
+      },
+      "inverter_panel_distance": {
+        "label": "Distance Between Inverter and Solar Panel",
+        "placeholder": "Enter inverter - solar panel distance",
+        "unit": "m"
+      },
+      "connection_panel": {
+        "label": "Connection Panel",
+        "placeholder": "Select connection panel",
+        "searchPlaceholder": "Search connection panel"
+      },
+      "tms_current_value": {
+        "label": "TMŞ current value",
+        "placeholder": "Enter TMŞ current value",
+        "unit": "A"
+      },
+      "connection_cable_cross_section": {
+        "label": "Connection Cable Cross Section",
+        "placeholder": "Enter connection cable cross section",
+        "unit": "cm"
+      },
+      "generator_status": {
+        "label": "Generator Status",
+        "placeholder": "Select generator status",
+        "searchPlaceholder": "Search generator status"
+      },
+      "transformer_status": {
+        "label": "Transformer Status",
+        "placeholder": "Select transformer status",
+        "searchPlaceholder": "Search transformer status"
+      },
+      "transformer_type": {
+        "label": "Transformer Type",
+        "placeholder": "Select transformer type",
+        "searchPlaceholder": "Search transformer type"
+      },
+      "transformer_power": {
+        "label": "Transformer Power",
+        "placeholder": "Enter transformer power",
+        "unit": "kVA"
+      },
+      "number_of_panels": {
+        "label": "Number of Solar Panels",
+        "placeholder": "Enter number of solar panels"
+      }
+    }
+  }
+}

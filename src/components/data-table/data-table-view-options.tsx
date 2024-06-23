@@ -35,7 +35,7 @@ export function DataTableViewOptions<TData>({
           {t("translations:table.toolbar.view")}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-[150px]">
+      <DropdownMenuContent align="end" className="w-max">
         <DropdownMenuLabel>
           {t("translations:table.toolbar.toggleColumns")}
         </DropdownMenuLabel>
@@ -47,10 +47,11 @@ export function DataTableViewOptions<TData>({
               typeof column.accessorFn !== "undefined" && column.getCanHide()
           )
           .map((column) => {
+            console.log(column);
             return (
               <DropdownMenuCheckboxItem
                 key={column.id}
-                className="capitalize"
+                className="capitalize whitespace-nowrap"
                 checked={column.getIsVisible()}
                 onCheckedChange={(value) => column.toggleVisibility(!!value)}
               >

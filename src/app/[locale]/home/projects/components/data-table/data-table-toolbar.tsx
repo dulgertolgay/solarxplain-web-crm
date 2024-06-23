@@ -9,6 +9,7 @@ import {
   offerStatuses,
   projectStatuses,
 } from "../../constants/types";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -90,12 +91,14 @@ export function DataTableToolbar<Project>({
           </span>
         </Button>
         <DataTableViewOptions table={table} />
-        <Button size="sm" className="h-8 gap-1">
-          <PlusCircle className="h-3.5 w-3.5" />
-          <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-            {t("add")}
-          </span>
-        </Button>
+        <Link href="/home/projects/0">
+          <Button size="sm" className="h-8 gap-1">
+            <PlusCircle className="h-3.5 w-3.5" />
+            <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
+              {t("add")}
+            </span>
+          </Button>
+        </Link>
       </div>
     </div>
   );
