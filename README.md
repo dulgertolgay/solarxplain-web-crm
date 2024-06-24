@@ -1,6 +1,6 @@
 # solarxplain-app
 
-Web app of solarXplain
+Web crm of solarXplain (a solar panel project management portal). Work in progress...
 
 
 # Docker komutları
