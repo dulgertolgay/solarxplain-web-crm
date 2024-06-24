@@ -28,9 +28,7 @@ export function DataTableToolbar<SiteVisit>({
           placeholder={t("table.toolbar.searchPlaceholder")}
           value={search}
           onChange={(event) => {
-            table
-              .getColumn("SiteVisit_name")
-              ?.setFilterValue(event.target.value);
+            table.getColumn("project_name")?.setFilterValue(event.target.value);
             setSearch(event.target.value);
           }}
           className="h-8 w-[150px] lg:w-[250px] bg-background shadow-sm"

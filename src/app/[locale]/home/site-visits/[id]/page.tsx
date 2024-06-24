@@ -12,7 +12,7 @@ import StructuralFeaturesForm from "../components/site-visit-details/structural-
 import ShadowFactors from "../components/site-visit-details/shadow-factors";
 import ElectricalConnectionFeatures from "../components/site-visit-details/electrical_connection_features";
 
-const i18nNamespaces = ["site-visits", "translations"];
+const i18nNamespaces = ["site-visits"];
 
 const getSiteVisits = async (id: string): Promise<SiteVisit> => {
   // TODO: Fetch site visit by id
